@@ -1,0 +1,60 @@
+import java.util.Date;
+
+public class TarjetaDebito {
+    private String numeroTarjeta;
+    private String titular;
+    private Date fechaExpiracion;
+    private int saldo;
+
+    public TarjetaDebito(String numeroTarjeta, String titular, Date fechaExpiracion, int saldo) {
+        this.numeroTarjeta = numeroTarjeta;
+        this.titular = titular;
+        this.fechaExpiracion = fechaExpiracion;
+        this.saldo = saldo;
+    }
+
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public Date getFechaExpiracion() {
+        return fechaExpiracion;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void depositar(int cantidad) {
+        saldo += cantidad;
+    }
+
+    public void retirar(int cantidad) {
+        if (cantidad <= saldo) {
+            saldo -= cantidad;
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
+    public static void main(String[] args) {
+        TarjetaDebito tarjeta = new TarjetaDebito("1234-5678-9012-3456", "John Doe", new Date(), 1000);
+
+        System.out.println("Número de tarjeta: " + tarjeta.getNumeroTarjeta());
+        System.out.println("Titular: " + tarjeta.getTitular());
+        System.out.println("Fecha de expiración: " + tarjeta.getFechaExpiracion());
+        System.out.println("Saldo: " + tarjeta.getSaldo());
+
+        tarjeta.depositar(500);
+        System.out.println("Saldo después de depositar 500: " + tarjeta.getSaldo());
+
+        tarjeta.retirar(300);
+        System.out.println("Saldo después de retirar 300: " + tarjeta.getSaldo());
+
+        tarjeta.retirar(1500);
+    }
+}

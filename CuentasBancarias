@@ -1,0 +1,55 @@
+import java.util.Random;
+
+class CuentaBancaria {
+    private String numeroCuenta;
+    private double saldo;
+
+    public CuentaBancaria() {
+        Random random = new Random();
+        this.numeroCuenta = String.valueOf(random.nextInt(900000) + 100000); 
+        this.saldo = 0;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void depositar(double cantidad) {
+        saldo += cantidad;
+        System.out.println("Depósito realizado: +" + cantidad + " Saldo actual: " + saldo);
+    }
+
+    public void retirar(double cantidad) {
+        if (saldo >= cantidad) {
+            saldo -= cantidad;
+            System.out.println("Retiro realizado: -" + cantidad + " Saldo actual: " + saldo);
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CuentaBancaria cuentaAhorro = new CuentaBancaria();
+        CuentaBancaria cuentaCorriente = new CuentaBancaria();
+
+        // Realizar operaciones en la cuenta de ahorro
+        cuentaAhorro.depositar(1000);
+        cuentaAhorro.retirar(500);
+
+        // Realizar operaciones en la cuenta corriente
+        cuentaCorriente.depositar(2000);
+        cuentaCorriente.retirar(1500);
+
+        System.out.println("Número de cuenta de ahorro: " + cuentaAhorro.getNumeroCuenta());
+        System.out.println("Saldo de cuenta de ahorro: " + cuentaAhorro.getSaldo());
+
+        System.out.println("Número de cuenta corriente: " + cuentaCorriente.getNumeroCuenta());
+        System.out.println("Saldo de cuenta corriente: " + cuentaCorriente.getSaldo());
+    }
+}
