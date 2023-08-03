@@ -1,10 +1,16 @@
 BANCO
+
 CLASES
-CUENTAS BANCARIAS (CuentasBanco.java)
-CLIENTES (Clientes.java)
-TARJETA DE CRÉDITOS (CreditsCard.java)
-FONDOS DE INVERSIÓN (Founds.java)
-CARTERA DE VALORES (Inversiones.java)
+CUENTAS BANCARIAS
+
+CLIENTES 
+
+TARJETA DE CRÉDITOS 
+
+FONDOS DE INVERSIÓN
+
+CARTERA DE VALORES 
+
 FUNCIONES
 CLIENTES
 Un cliente puede registrarse en el banco.
