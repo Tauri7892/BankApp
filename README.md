@@ -1,5 +1,3 @@
-# BankApp
-INTRODUCCION
 BANCO
 CLASES
 CUENTAS BANCARIAS (CuentasBanco.java)
