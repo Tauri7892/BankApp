@@ -42,7 +42,7 @@ public class TarjetaDebito {
     }
 
     public static void main(String[] args) {
-        TarjetaDebito tarjeta = new TarjetaDebito("1234-5678-9012-3456", "John Doe", new Date(), 1000);
+        TarjetaDebito tarjeta = new TarjetaDebito("1234-5678-9012-3456", "Facundo Bonafos", new Date(), 1000);
 
         System.out.println("Número de tarjeta: " + tarjeta.getNumeroTarjeta());
         System.out.println("Titular: " + tarjeta.getTitular());
